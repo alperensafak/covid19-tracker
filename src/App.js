@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 
 import CssBaseline from "@material-ui/core/CssBaseline";
-import Typography from "@material-ui/core/Typography";
+
 import Container from "@material-ui/core/Container";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
@@ -37,7 +37,16 @@ const App = () => {
       <CssBaseline />
       <Container maxWidth="lg">
         <Grid container>
-     
+          <img
+            src={covidLogo}
+            alt="Covid19"
+            style={{
+              marginTop: 20,
+              width: 100,
+              height: 100,
+            }}
+          />
+
           <FormControl className={classes.formControl}>
             <Select
               labelId="countries"
@@ -55,8 +64,7 @@ const App = () => {
 
           {/* chart */}
           <Grid item xs={12}>
-            
-            <AreaChart />
+            <AreaChart country={country} />
           </Grid>
         </Grid>
       </Container>
@@ -66,8 +74,4 @@ const App = () => {
 
 export default App;
 
-
-export const functionName = (params) => {
-  
-}
-
+export const functionName = params => {};
